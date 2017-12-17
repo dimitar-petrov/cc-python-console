@@ -1,0 +1,4 @@
+* Create new project
+  #+BEGIN_SRC shell
+    cookiecutter gh:dimitar-petrov/cc-python-console
+  #+END_SRC

@@ -1,0 +1,10 @@
+{
+  "repo_name": "my-python-console",
+    "package_name": "package_name",
+    "description": "",
+    "console_app_name": "console_app_name",
+    "github_user": "dimitar-petrov",
+    "author_name": "Dimitar Petrov",
+    "author_email": "petrov.dimp@gmail.com",
+    "year": "2017"
+}
