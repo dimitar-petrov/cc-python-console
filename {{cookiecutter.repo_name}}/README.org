@@ -1,8 +1,7 @@
-{{cookiecutter.repo_name}}
-#############################
+* {{cookiecutter.repo_name}}
 
 
-[[https://travis-ci.org/{{cookiecutter.github_user}}/{{cookiecutter.repo_name}}.svg?branch=master][https://travis-ci.org/{{cookiecutter.github_user}}/{{cookiecutter.repo_name}}]]
+[[https://travis-ci.org/{{cookiecutter.github_user}}/{{cookiecutter.repo_name}}][https://travis-ci.org/{{cookiecutter.github_user}}/{{cookiecutter.repo_name}}.svg?branch=master]]
 
 
 License
