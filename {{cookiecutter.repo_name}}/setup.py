@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 import sys
+import pip
 
 from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
 
-requires = ['click']
 tests_require = ['pytest', 'pytest-cache', 'pytest-cov']
-
 
 class PyTest(TestCommand):
     def finalize_options(self):
