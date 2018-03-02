@@ -20,6 +20,18 @@ class PyTest(TestCommand):
         errno = pytest.main(self.test_args)
         sys.exit(errno)
 
+links = []
+requires = []
+
+requirements = pip.req.parse_requirements(
+    'requirements.txt', session=pip.download.PipSession())
+
+for item in requirements:
+    # we want to handle package names and also repo urls
+    if getattr(item, 'link', None): # newer pip has link
+        links.append(str(item.link))
+    if item.req:
+        requires.append(str(item.req))
 
 setup(
     name="{{cookiecutter.repo_name}}",
@@ -31,7 +43,9 @@ setup(
     author_email="{{cookiecutter.author_email}}",
     url="https://{{cookiecutter.repo_name}}.readthedocs.org",
     packages=find_packages(),
+    dependency_links=links,
     install_requires=requires,
+    include_package_data=True,
     entry_points={'console_scripts': [
         '{{cookiecutter.console_app_name}} = {{cookiecutter.package_name}}.console:main']},
     classifiers=[
