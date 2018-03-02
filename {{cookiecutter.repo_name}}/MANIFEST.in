@@ -1,2 +1,2 @@
-include README.org LICENSE
+include README.org LICENSE requirements.txt
 prune *.pyc
