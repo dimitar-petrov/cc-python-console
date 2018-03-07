@@ -12,9 +12,9 @@ ENV PYTHON_VERSIONS 3.6.3 2.7.14
 COPY test-requirements.txt /code/test-requirements.txt
 RUN pyenv install --list
 RUN yes | \
-    for version in $PYTHON_VERSIONS; do pyenv install $version; echo $version > .python-version; done 
+    for version in $PYTHON_VERSIONS; do pyenv install $version; done 
 
-RUN pip install -r /code/test-requirements.txt
+RUN pyenv local $PYTHON_VERSIONS && pip install -r /code/test-requirements.txt
 
 ENV GITLAB_SELF_SIGNED_REPO ''
 RUN if [ ! -z $GITLAB_SELF_SIGEND_REPO ]; then \

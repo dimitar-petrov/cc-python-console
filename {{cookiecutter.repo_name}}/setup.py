@@ -32,9 +32,11 @@ for item in requirements:
     if item.req:
         requires.append(str(item.req))
 
+VERSION = open('VERSION').read().strip()
+
 setup(
     name="{{cookiecutter.repo_name}}",
-    version='0.0.0',
+    version=VERSION,
     description="{{cookiecutter.description}}",
     long_description="\n\n".join([open("README.org").read()]),
     license='GPL 3.0',
