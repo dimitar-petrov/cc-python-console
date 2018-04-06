@@ -3,7 +3,7 @@ version: 1
 disable_existing_loggers: False
 formatters:
   simple:
-    format: '%(asctime)s.%(msecs)03d %(levelname)s {%(module)s} {%(threadName)s} [%(funcName)s] %(message)s'
+    format: "%(asctime)s.%(msecs)03d %(levelname)s {%(module)s} {%(threadName)s} [%(funcName)s] %(message)s"
 
 handlers:
   console:
