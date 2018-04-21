@@ -1,11 +1,20 @@
 # -*- coding: utf-8 -*-
 import sys
-import pip
 
 from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
 
-tests_require = ['pytest', 'pytest-cache', 'pytest-cov']
+tests_require = [
+    'pytest',
+    'pytest-cache',
+    'pytest-cov',
+    'pytest-mock'
+    'pytest-benchmark',
+    'tox',
+    'tox-pyenv',
+    'pylint'
+]
+
 
 class PyTest(TestCommand):
     def finalize_options(self):
@@ -19,18 +28,11 @@ class PyTest(TestCommand):
         errno = pytest.main(self.test_args)
         sys.exit(errno)
 
-links = []
-requires = []
 
-requirements = pip.req.parse_requirements(
-    'requirements.txt', session=pip.download.PipSession())
-
-for item in requirements:
-    # we want to handle package names and also repo urls
-    if getattr(item, 'link', None): # newer pip has link
-        links.append(str(item.link))
-    if item.req:
-        requires.append(str(item.req))
+requires = [
+    'click>=6.7',
+    'pyyaml>=3.12'
+]
 
 VERSION = open('VERSION').read().strip()
 
@@ -44,7 +46,6 @@ setup(
     author_email="{{cookiecutter.author_email}}",
     url="https://{{cookiecutter.repo_name}}.readthedocs.org",
     packages=find_packages(),
-    dependency_links=links,
     install_requires=requires,
     include_package_data=True,
     entry_points={'console_scripts': [

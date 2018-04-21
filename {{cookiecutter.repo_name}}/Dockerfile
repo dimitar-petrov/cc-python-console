@@ -22,3 +22,9 @@ RUN if [ -n $GITLAB_SELF_SIGEND_REPO ]; then \
     -showcerts </dev/null 2>/dev/null|openssl x509 \
     -outform pem > /usr/local/share/ca-certificates/custom-ss-gitlab.crt; \
     update-ca-certificates; fi
+
+# Add local pypi server for private dependencies
+RUN mkdir /root/.pip 
+RUN echo '[global]' > /root/.pip/pip.conf
+RUN echo 'trusted-host = pypi' >> /root/.pip/pip.conf
+RUN echo 'index-url = http://pypi:80' >> /root/.pip/pip.conf
