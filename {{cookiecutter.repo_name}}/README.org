@@ -1,8 +1,8 @@
 * {{cookiecutter.repo_name}}
 
 
-[[https://travis-ci.org/{{cookiecutter.github_user}}/{{cookiecutter.repo_name}}][https://travis-ci.org/{{cookiecutter.github_user}}/{{cookiecutter.repo_name}}.svg?branch=master]]
-
+[[https://colossus/blockchain/{{cookiecutter.repo_name}}/commits/master][https://colossus/blockchain/{{cookiecutter.repo_name}}/badges/master/build.svg]]
+[[http://blockchain.colossus.io/{{cookiecutter.repo_name}}/][https://gitlab.com/gitlab-org/gitlab-ce/badges/master/coverage.svg?job=coverage]]
 
 License
 -------

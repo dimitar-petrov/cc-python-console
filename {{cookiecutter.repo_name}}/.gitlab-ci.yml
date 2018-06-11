@@ -9,3 +9,16 @@ before_script:
 test:
   script:
     - tox
+
+pages:
+  stage: deploy
+  dependencies:
+    - test
+  script:
+    - mv htmlcov/ public/
+  artifacts:
+    paths:
+      - public
+    expire_in: 30 days
+  only:
+    - master
